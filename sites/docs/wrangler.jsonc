@@ -1,0 +1,8 @@
+{
+  "name": "runed-docs",
+  "main": ".svelte-kit/cloudflare/_worker.js",
+  "compatibility_date": "2025-10-07",
+  "assets": {
+    "directory": ".svelte-kit/cloudflare"
+  }
+}
