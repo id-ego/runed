@@ -1,0 +1,52 @@
+{
+	"name": "docs",
+	"description": "Docs for Runed",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "pnpm \"/dev:/\"",
+		"dev:content": "velite dev --watch",
+		"dev:svelte": "pnpm build:search && vite dev",
+		"build:contributors": "tsx ./scripts/build-contributors-data.ts",
+		"build": "velite && pnpm build:search && vite build",
+		"build:search": "tsx ./scripts/update-velite-output.js && tsx ./scripts/build-search-data.js",
+		"preview": "vite preview",
+		"check": "velite && pnpm build:search && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "pnpm build:content && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"license": "MIT",
+	"contributors": [
+		{
+			"name": "Thomas G. Lopes",
+			"url": "https://thomasglopes.com"
+		},
+		{
+			"name": "Hunter Johnston",
+			"url": "https://github.com/huntabyte"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/svecosystem/runed.git"
+	},
+	"devDependencies": {
+		"@svecodocs/kit": "^0.5.1",
+		"@sveltejs/adapter-auto": "^6.0.1",
+		"@sveltejs/adapter-cloudflare": "^7.0.3",
+		"@sveltejs/kit": "catalog:",
+		"@sveltejs/vite-plugin-svelte": "catalog:",
+		"@tailwindcss/vite": "4.1.13",
+		"@types/node": "catalog:",
+		"mdsx": "^0.0.6",
+		"phosphor-svelte": "^3.0.1",
+		"runed": "workspace:*",
+		"svelte": "catalog:",
+		"svelte-check": "catalog:",
+		"tailwindcss": "4.1.13",
+		"tsx": "^4.19.3",
+		"typescript": "catalog:",
+		"velite": "^0.2.1",
+		"vite": "catalog:"
+	},
+	"type": "module"
+}
